@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_URL } from '../utils/config';
 
 export default function GameHistory() {
     const [games, setGames] = useState([]);
@@ -10,7 +11,7 @@ export default function GameHistory() {
 
     const fetchGames = async () => {
         try {
-            const response = await fetch('/api/games/history');
+            const response = await fetch(`${API_URL}/api/games/history`);
             if (response.ok) {
                 const data = await response.json();
                 setGames(data.games || []);

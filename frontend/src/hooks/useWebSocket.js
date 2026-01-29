@@ -1,9 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { soundManager } from '../utils/sounds';
-
-const WS_URL = import.meta.env.PROD
-    ? `wss://${window.location.host}/ws`
-    : 'ws://localhost:8080/ws';
+import { WS_URL } from '../utils/config';
 
 export function useWebSocket() {
     const [isConnected, setIsConnected] = useState(false);
