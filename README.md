@@ -94,8 +94,8 @@ emitrr/
 ### 1. Clone and Setup
 
 ```bash
-git clone https://github.com/yourusername/emitrr.git
-cd emitrr
+git clone https://github.com/Vikas-1205/emitrr-connect-four.git
+cd emitrr-connect-four
 ```
 
 ### 2. Start Backend
