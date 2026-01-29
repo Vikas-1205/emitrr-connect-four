@@ -5,7 +5,7 @@ services:
   # Go Backend API + WebSocket Server
   - type: web
     name: connect-four-backend
-    env: go
+    runtime: go
     region: oregon
     plan: free
     buildCommand: cd backend && go build -o server main.go
@@ -18,8 +18,7 @@ services:
   # React Frontend (Static Site)
   - type: web
     name: connect-four-frontend
-    env: static
-    region: oregon
+    runtime: static
     plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
