@@ -6,7 +6,7 @@ A real-time, backend-driven Connect Four game with player matchmaking, competiti
 
 | Service | URL |
 |---------|-----|
-| **🎮 Play the Game** | [connect-four-frontend.onrender.com](https://connect-four-frontend.onrender.com) |
+| **🎮 Play the Game** | [connect-four-frontend-6x9a.onrender.com](https://connect-four-frontend-6x9a.onrender.com) |
 | **🔧 Backend API** | [connect-four-backend-xalu.onrender.com](https://connect-four-backend-xalu.onrender.com) |
 
 > **Note:** Free tier instances may take 30-50 seconds to wake up on first request.
