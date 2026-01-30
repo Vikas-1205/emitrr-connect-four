@@ -255,21 +255,6 @@ The AI uses **Minimax with Alpha-Beta Pruning**:
 - Most frequent winners
 - User-specific metrics (win rate, streak)
 
-## 📝 Environment Variables
-
-| Variable | Required | Default | Description |
-|----------|----------|---------|-------------|
-| `PORT` | No | 8080 | Server port |
-| `DATABASE_URL` | No | — | PostgreSQL connection string |
-| `KAFKA_BROKERS` | No | — | Comma-separated Kafka brokers |
-
-## 🧪 Testing
-
-```bash
-cd backend
-go test ./game/...   # Test game logic
-go test ./server/... # Test WebSocket handling
-```
 
 ---
 
