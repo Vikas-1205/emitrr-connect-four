@@ -69,9 +69,8 @@ func main() {
 	mux.HandleFunc("/api/analytics/user/", handleUserAnalytics)
 	mux.HandleFunc("/api/health", handleHealth)
 
-	// Serve static files for frontend
-	fs := http.FileServer(http.Dir("./static"))
-	mux.Handle("/", fs)
+	// Root handler - show API info
+	mux.HandleFunc("/", handleRoot)
 
 	// CORS middleware
 	handler := corsMiddleware(mux)
@@ -98,6 +97,29 @@ func corsMiddleware(next http.Handler) http.Handler {
 		}
 
 		next.ServeHTTP(w, r)
+	})
+}
+
+// handleRoot shows API information
+func handleRoot(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		http.NotFound(w, r)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]interface{}{
+		"name":    "Connect Four API",
+		"version": "1.0.0",
+		"status":  "running",
+		"endpoints": map[string]string{
+			"websocket":   "/ws",
+			"leaderboard": "/api/leaderboard",
+			"stats":       "/api/stats",
+			"history":     "/api/games/history",
+			"analytics":   "/api/analytics",
+			"health":      "/api/health",
+		},
+		"frontend": "https://connect-four-frontend.onrender.com",
 	})
 }
 
