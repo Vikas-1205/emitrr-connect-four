@@ -9,8 +9,8 @@ services:
     region: oregon
     plan: free
     rootDir: backend
-    buildCommand: go build -o server .
-    startCommand: chmod +x ./server && ./server
+    buildCommand: go build -o app .
+    startCommand: ./app
     envVars:
       - key: PORT
         value: 8080
