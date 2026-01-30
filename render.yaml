@@ -9,8 +9,8 @@ services:
     region: oregon
     plan: free
     rootDir: backend
-    buildCommand: go build -o server main.go
-    startCommand: ./server
+    buildCommand: go build -o server .
+    startCommand: chmod +x ./server && ./server
     envVars:
       - key: PORT
         value: 8080
@@ -25,9 +25,9 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_WS_URL
-        value: wss://connect-four-backend.onrender.com/ws
+        value: wss://connect-four-backend-xalu.onrender.com/ws
       - key: VITE_API_URL
-        value: https://connect-four-backend.onrender.com
+        value: https://connect-four-backend-xalu.onrender.com
     routes:
       - type: rewrite
         source: /*
