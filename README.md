@@ -271,10 +271,6 @@ go test ./game/...   # Test game logic
 go test ./server/... # Test WebSocket handling
 ```
 
-## 📄 License
-
-MIT License
-
 ---
 
 Built with ❤️ for Emitrr Backend Engineering Internship Assignment
